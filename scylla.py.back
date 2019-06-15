@@ -1,0 +1,76 @@
+from flask import Flask, jsonify, request, render_template, url_for
+app = Flask(__name__)
+import subprocess
+from sh import ls
+import json
+from base58 import b58encode
+import os
+from hurry.filesize import size
+from functools import wraps
+from flask import request, Response
+from operator import itemgetter
+
+def check_auth(username, password):
+    """This function is called to check if a username /
+    password combination is valid.
+    """
+    return username == 'sammy' and password == 'BasicPassword!'
+
+def authenticate():
+    """Sends a 401 response that enables basic auth"""
+    return Response(
+    'Could not verify your access level for that URL.\n'
+    'You have to login with proper credentials', 401,
+    {'WWW-Authenticate': 'Basic realm="Login Required"'})
+
+def requires_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        if not auth or not check_auth(auth.username, auth.password):
+            return authenticate()
+        return f(*args, **kwargs)
+    return decorated
+
+#@app.route('/regex', methods = ["POST"])
+def submit_name_regex():
+
+    #request.getdata()
+    request_json = json.loads(request.data.decode('utf-8'))
+    regex = request_json["regex"]
+    print(request_json)
+    subprocess.Popen("/usr/bin/nohup find /home/ubuntu/all_unzipped -type f -exec /bin/grep " + regex + " {} + > /var/www/html/results/" + b58encode(regex).decode('utf-8'), shell=True)
+    return "h'ok"
+
+#@app.route("/status")
+def check_status():
+
+    _dir = ls("-alhS", "/var/www/html/results")
+    print(_dir)
+    return str(_dir)
+
+#@app.route("/grab")
+def grab():
+    f = open("/var/www/html/results/" + request.args.get("wut"))
+    return f.read()
+
+@app.route("/")
+@requires_auth
+def index():
+    all_dbs = [f for f in os.listdir("static") if os.path.isfile(os.path.join("static", f))]
+
+    all_dbs_dics = []
+    for db in all_dbs:
+        _size = os.path.getsize("static/" + db)
+        name = db.split(".")[0]
+        filename = db
+        _dic = {"size" : size(_size), "name" : name.title(), "filename" : filename}
+        all_dbs_dics.append(_dic)
+        
+    print(all_dbs)
+    all_dbs_dics = sorted(all_dbs_dics, key=itemgetter('name')) 
+    return render_template("index.html", all_dbs_dics = all_dbs_dics)
+
+
+if __name__ == "__main__":
+    app.run(host = "0.0.0.0", threaded=True, port=8080)

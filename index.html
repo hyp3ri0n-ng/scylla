@@ -1,0 +1,40 @@
+<html>
+
+  <style>
+    html { font-size:16px; }
+  </style>
+
+<title>Scylla</title>
+<h1>Scylla Data and Dumps by <a href="https://twitter.com/_hyp3ri0n">_hyp3ri0n</a></h1>
+
+HS link: http://scyllabyeatabumx.onion/ <br />
+Clearnet link: http://scylla.sh/ or if DNS is down http://34.215.230.234/
+
+<h2>Databases</h2>
+
+<div>
+{% for db in all_dbs_dics %}
+  <div class="grid-item" style="display: inline;">
+    <img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>
+    <div style="padding-bottom:32px;">
+    <div style=""><a href="{{ url_for('static', filename = db['filename']) }}">{{ db['filename'] }}</a></div>
+    <div style="">The {{ db['name'] }} database dump</div>
+    <div style="">{{ db['size'] }}</div>
+  </div>
+{% endfor %}
+</div>
+
+<p>
+<h2>ToS</h2>
+
+Don't be an asshole. That means, please please please use these dumps responsibly and for good - or at least neutral - needs.
+Everyone here has been vetted by me, _hyp3ri0n, as a security or other researcher and should know what to use this for and what not to use
+this for. Furthermore, please do not share your password with anyone. Other than that I sincerely hope this data helps you with your
+projects. Much love. <br /><br />
+
+- _hyp3ri0n
+
+</p>
+
+
+</html>

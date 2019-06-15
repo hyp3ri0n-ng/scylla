@@ -1,0 +1,5 @@
+static/dbs/*
+logs/*
+error.log
+access.log
+*.pyc

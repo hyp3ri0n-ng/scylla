@@ -1,0 +1,5 @@
+static/*
+logs/*
+error.log
+access.log
+*.pyc
