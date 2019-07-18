@@ -83,7 +83,6 @@ you with your projects. Much love.
 The information on this website is intended only for research purposes. We search common database leak sites to ensure this is not being circulated for malicious use. We do have default logging turned on for this website which likely includes IP addresses and other identifiers. Please don't misuse this information as we will cooperate with law enforcement if it is.
 </p>
 
-
 <p>
 Oh also, by using this site there's a cryptominer running in the background
 (throttled) to provide an ad-free experience. Feel free to turn JavaScript
@@ -91,17 +90,33 @@ off should this bother you. But the longer you leave it on the more I can
 continue to provide updates and keep this site up (~$3000/month) <br /><br />
 
 - _hyp3ri0n <br /><br />
+</p>
+<h2>Donations</h2>
 
-PS since many have asked (thank you btw) about direct donations, you can send
-Bitcoin to 3A33QU7C2DysuiLhxaeNmgprNnJfV2NskM or Monero to 83mqvyQpvzM7APKvWVGwa1iBVkwpThRdDapq4LejPdXi6dLs1oqr4c3Uchh7zUomATCfXrav8Kv1d3DoFUoJ1nQqD8NqW6K
-
+<p>
+Since many have asked (thank you btw) about direct donations, you can send Bitcoin to 3A33QU7C2DysuiLhxaeNmgprNnJfV2NskM
+or Monero to 83mqvyQpvzM7APKvWVGwa1iBVkwpThRdDapq4LejPdXi6dLs1oqr4c3Uchh7zUomATCfXrav8Kv1d3DoFUoJ1nQqD8NqW6K and may also
+donate with paypal with this button <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="TY7TX56VZARXG" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form>
 </p>
 
+<h2>Issues and Bugs</h2>
+  <p>
+    Scylla is currently in alpha-v0.0.1, this is the first "official" non-prototype release. There will be bugs, managing this amount of data is difficult and expensive. Please report bugs to
+    <a href="https://github.com/acaceres2176/scylla/issues" target="_blank">the scylla open github repo</a>. Here you will also find the scylla code, please feel free to open feature requests
+    here as well. These let me know what the community wants out of this site and is supremely useful to me.
+  </p>
+
+<!--
 <h2>Internet-Wide Port Scans</h2>
 <table id="scans" class="grid-table">
 {% for scan in all_scans_dics %}  
   <tr class="grid-item">
-    <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
+    <img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>
     <td style=""><a href="http://scylla.sh/static/port-scans/{{ scan['filename'] }}">{{ scan['filename'] }}</a></td>
     <td style="">The {{ scan['name'] }} scan</td>
     <td style="">{{ scan['size'] }}</td>
@@ -109,19 +124,24 @@ Bitcoin to 3A33QU7C2DysuiLhxaeNmgprNnJfV2NskM or Monero to 83mqvyQpvzM7APKvWVGwa
 {% endfor %}
 </table>
 
-<h2>Ineternet-Wide Web Scans</h2>
+<h2>Internet-Wide Web Scans</h2>
 <table id="scans2" class="grid-table">
   <tr class="grid-item">
-    <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
+    <img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>
     <td style=""><a href="https://s3-us-west-2.amazonaws.com/hyperiongray-public/final_results.jl">final_results.jl</a></td>
     <td style="">All historical PunkSPIDER results</td>
     <td style="">5.5 GB</td>
   </tr>
 </table>
+-->
 
-
-<h2>Databases</h2>
-
+<h2>Databases*</h2>
+<p>
+  *data for larger files is stored on mega.nz (a mass storage site). You will be redirected to mega to download many files, this will provide less failed downloads (an issue with the previous version).
+  For HUGE files you may be asked to install the Mega client or use JDownloader (<a href="https://www.geekiest.net/post/How-to-download-from-Mega-using-download-manager" target="_blank">tutorial</a>).
+  Either way, if you cannot figure out how to download something, please contact me at scylla@opayq.com. Also the tar.gz file of all databases is coming - please be patient as I upload this, it takes
+  a little while.
+</p>
 <table id="dbs" class="grid-table">
 
   <tr class="grid-item">
@@ -131,118 +151,124 @@ Bitcoin to 3A33QU7C2DysuiLhxaeNmgprNnJfV2NskM or Monero to 83mqvyQpvzM7APKvWVGwa
     <td style="">Size</td>
   </tr>
 
+  <!--
   <tr class="grid-item">
     <td style=""><a href="https://hyperiongray-public.s3-us-west-2.amazonaws.com/dbs.tar.gz">dbs.tar.gz - All Databases</a></td>
     <td style="">519GB</td>
-  </tr>
+  </tr>-->
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!H6JAHCSY!S2thHvy-rKM8c-zE_4VhPg">AP MYR & ZABUGOR #2</a></td>
+    <td style=""><a href="https://mega.nz/#!7mBVVASB!t2l5Xwgr-hBYpVyf7JB1XwjUjjCwh8rum-fwcQVmfrE" target="_blank">All databases</a></td>
+    <td style="">519.92GB</td>
+  </tr>
+  
+  <tr class="grid-item">
+    <td style=""><a href="https://mega.nz/#F!H6JAHCSY!S2thHvy-rKM8c-zE_4VhPg" target="_blank">AP MYR & ZABUGOR #2</a></td>
     <td style="">19.49GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!GqBWQYoY!9Lyy5RU3lTgtZ6ZS0JTaXQ">Collection_1</a></td>
+    <td style=""><a href="https://mega.nz/#F!GqBWQYoY!9Lyy5RU3lTgtZ6ZS0JTaXQ" target="_blank">Collection_1</a></td>
     <td style="">19.49GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!KyQklShQ!1HKZ6upskdbsISf4BSEmZA">Collection_2</a></td>
+    <td style=""><a href="https://mega.nz/#F!KyQklShQ!1HKZ6upskdbsISf4BSEmZA" target="_blank">Collection_2</a></td>
     <td style="">528.50GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!3qIiUCYL!xWsmhxa_I3eXpWXv_xSZpw">Collection_3</a></td>
+    <td style=""><a href="https://mega.nz/#F!3qIiUCYL!xWsmhxa_I3eXpWXv_xSZpw" target="_blank">Collection_3</a></td>
     <td style="">37.18GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!7yw2FAIZ!U2Cdn4y_xFphFr1tOJz_cw">Collection_4</a></td>
+    <td style=""><a href="https://mega.nz/#F!7yw2FAIZ!U2Cdn4y_xFphFr1tOJz_cw" target="_blank">Collection_4</a></td>
     <td style="">178.58GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!X6AwhI6K!QwE_Z1AiVb_0TcklmbepHQ">Collection_5</a></td>
+    <td style=""><a href="https://mega.nz/#F!X6AwhI6K!QwE_Z1AiVb_0TcklmbepHQ" target="_blank">Collection_5</a></td>
     <td style="">40.56GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!D6JWmCCI!IgVL-D1jHX41_qC6DB2Cug">EU_Russian_Antipublic</a></td>
+    <td style=""><a href="https://mega.nz/#F!D6JWmCCI!IgVL-D1jHX41_qC6DB2Cug" target="_blank">EU_Russian_Antipublic</a></td>
     <td style="">11.48 GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!v341lSYa!Jdbo0POQkfWoi7g6LE9WlgkkLoNW7WyyzfTvtehMu3w">experian.7z</a></td>
+    <td style=""><a href="https://mega.nz/#!v341lSYa!Jdbo0POQkfWoi7g6LE9WlgkkLoNW7WyyzfTvtehMu3w" target="_blank">experian.7z</a></td>
     <td style="">1.01GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!uuw1CQLJ!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o">adobe.sql.gz</a></td>
+    <td style=""><a href="https://mega.nz/#!uuw1CQLJ!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o" target="_blank">adobe.sql.gz</a></td>
     <td style="">1.09GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!S6wDXQhY!XOHHKk9xO_XQ8gbpiRobnW0ZSlVt0uNq3uGr0iXPRAM">imesh.7z</a></td>
+    <td style=""><a href="https://mega.nz/#!S6wDXQhY!XOHHKk9xO_XQ8gbpiRobnW0ZSlVt0uNq3uGr0iXPRAM" target="_blank">imesh.7z</a></td>
     <td style="">1.90GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!r3gVzaiY!J1ujVC30EtkeHiArT564OBQPNKTznZPUxF12Qb18_lA">vk.com.rar</a></td>
+    <td style=""><a href="https://mega.nz/#!r3gVzaiY!J1ujVC30EtkeHiArT564OBQPNKTznZPUxF12Qb18_lA" target="_blank">vk.com.rar</a></td>
     <td style="">1.12GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!Xron1QAC!0lffKEC7yt7DQjfJiga6LyQICWXyc-yenUc3dRG1tJk">kkkpen6.tar.gz</a></td>
+    <td style=""><a href="https://mega.nz/#!Xron1QAC!0lffKEC7yt7DQjfJiga6LyQICWXyc-yenUc3dRG1tJk" target="_blank">kkkpen6.tar.gz</a></td>
     <td style="">1.75GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!fzwihSYJ!3mBfoso8g4cPwL_MkCutDLHh6Gqf4Z2dtDjYaduMi4U">last.fm.tar.gz</a></td>
+    <td style=""><a href="https://mega.nz/#!fzwihSYJ!3mBfoso8g4cPwL_MkCutDLHh6Gqf4Z2dtDjYaduMi4U" target="_blank">last.fm.tar.gz</a></td>
     <td style="">2.38GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!fqwzSC7Z!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o">Tumblr_2013_users.zip</a></td>
+    <td style=""><a href="https://mega.nz/#!fqwzSC7Z!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o" target="_blank">Tumblr_2013_users.zip</a></td>
     <td style="">1.09GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!Or4WWKTD!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o">Tumblr_2013_users.zip</a></td>
+    <td style=""><a href="https://mega.nz/#!Or4WWKTD!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o" target="_blank">Tumblr_2013_users.zip</a></td>
     <td style="">1.09GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!2iAl2CyK!oOMe2YXOBciFgPUOd7XPVK3O3cfWS5cs5-qMRKYOVtg">neatease.7z</a></td>
+    <td style=""><a href="https://mega.nz/#!2iAl2CyK!oOMe2YXOBciFgPUOd7XPVK3O3cfWS5cs5-qMRKYOVtg" target="_blank">neatease.7z</a></td>
     <td style="">2.00GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!jzQj3ABD!w2-vVn9dc7Z4ySNql6VW4R8d9Jl1djVdr2HX52CsuCw">dropbox.7z</a></td>
+    <td style=""><a href="https://mega.nz/#!jzQj3ABD!w2-vVn9dc7Z4ySNql6VW4R8d9Jl1djVdr2HX52CsuCw" target="_blank">dropbox.7z</a></td>
     <td style="">2.36GB</td>
   </tr>
   
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!73Z1DCCb!8KuFdMhz3BUHME5A-4zPOnIqrTTWwk6EG7Ww3h9f0wM">ashley_madison.7z</a></td>
+    <td style=""><a href="https://mega.nz/#!73Z1DCCb!8KuFdMhz3BUHME5A-4zPOnIqrTTWwk6EG7Ww3h9f0wM" target="_blank">ashley_madison.7z</a></td>
     <td style="">2.42GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!SixX3YCb!LAcbmVc3RtVmaAJH0JvHB-G7BLv9G0xA599jDAUd7Jo">badoo.7z</a></td>
+    <td style=""><a href="https://mega.nz/#!SixX3YCb!LAcbmVc3RtVmaAJH0JvHB-G7BLv9G0xA599jDAUd7Jo" target="_blank">badoo.7z</a></td>
     <td style="">5.38GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!ezwVVQgD!SxYjWUNxPXLFoc3O6gpiTTS7AjVUR7etFRNM8HjxblY">fling.com</a></td>
+    <td style=""><a href="https://mega.nz/#!ezwVVQgD!SxYjWUNxPXLFoc3O6gpiTTS7AjVUR7etFRNM8HjxblY" target="_blank">fling.com</a></td>
     <td style="">2.42GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!qvpRkATY!lH_oDVC_TO_c3FqgVV7ITFjp5wzzqcKpOxIatG8fRWE">modbsolutions.rar</a></td>
+    <td style=""><a href="https://mega.nz/#!qvpRkATY!lH_oDVC_TO_c3FqgVV7ITFjp5wzzqcKpOxIatG8fRWE" target="_blank">modbsolutions.rar</a></td>
     <td style="">2.61GB</td>
   </tr>
 
   <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!ezhjjSDY!3Hu-HgXzBsRKC4o4U__dr_GKovS1jiT1WbnXtJ7EY9M">patreon.7z</a></td>
+    <td style=""><a href="https://mega.nz/#!ezhjjSDY!3Hu-HgXzBsRKC4o4U__dr_GKovS1jiT1WbnXtJ7EY9M" target="_blank">patreon.7z</a></td>
     <td style="">2.80GB</td>
   </tr>
 

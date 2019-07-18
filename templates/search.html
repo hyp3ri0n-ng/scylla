@@ -111,7 +111,7 @@ font-weight: normal;
 
 <body>
 
-  <p>*Search is in early alpha, please report bugs to acaceres att hyperiongray . c0m</p>
+  <p>*Search is in early alpha, please report bugs to <a href="https://github.com/acaceres2176/scylla/issues" target="_blank">the scylla github repo</a></p>
   <form class="search-container" action="search">
     <input type="text" id="search-bar" name="q" placeholder="Please enter a search term...">
     <!--<a href="#"><img class="search-icon"></a>-->
@@ -163,7 +163,7 @@ font-weight: normal;
 <h2>Normalized Databases</h2>
 <p>The following are the databases available for search.</p>
 {% for db in dbs %}
-  {% if "all.jl" in db %}
+  {% if "all" in db %}
   <!-- skipped all.jl -->
   {% endif %}
   The {{ db.split(".")[0] }} Database<br />

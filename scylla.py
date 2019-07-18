@@ -17,6 +17,7 @@ from operator import itemgetter
 from json2html import json2html
 import glob
 import requests
+from flask import jsonify
 
 def check_auth(username, password):
     """This function is called to check if a username /
@@ -116,6 +117,9 @@ def search():
     json_hits_num = r.json()["hits"]["total"]["value"]
     json_hits_raw = r.json()["hits"]["hits"]
 
+    if 'Accept' in request.headers and request.headers['Accept'] == 'application/json':
+        return jsonify(json_hits_raw)
+    
     json_hits_filtered = [x["_source"] for x in json_hits_raw]
     print(json.dumps(json_hits_filtered))
 
@@ -147,8 +151,9 @@ def search():
 
     pages = int(json_hits_num/size)
 
-    dbs = glob.glob("/home/ubuntu/bighd/normalized/fixed_may30_19/*")
-    dbs = [os.path.basename(db).split(".")[0] for db in dbs]
+    dbs = glob.glob("/home/ubuntu/bighd/normalized/07june_normed/*")
+    dbs = [os.path.basename(db).split(".")[0] for db in dbs if "all" not in db]
+    dbs = list(set(dbs))
 
     try:
         fields = requests.get("http://localhost:9200/pw_data/_mapping").json()["pw_data"]["mappings"]["properties"].keys()
