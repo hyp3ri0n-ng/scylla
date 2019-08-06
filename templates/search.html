@@ -160,6 +160,68 @@ font-weight: normal;
   
 </figure>
 
+<h2>API</h2>
+
+  <p>The search API can be accessed by sending a GET request to this page with the Accept header set
+    to <code>Accept: application/json</code>
+    <br /><br />
+    <code>
+      GET https://scylla.sh/search?q=your_query&num=1000&from=200
+    </code>
+    <br /><br />
+
+    The above GET request grabs 1000 results of your_query starting at the 200th record. Pagination
+    can be done using the "from" parameter. Queries return the first 10,000 hits.
+    <br /><br />
+
+    Data is returned in JSON format like the following:
+    <br /><br />
+<code>
+<pre>
+[
+   {
+      "_id":"hKW8WWsBBGJneKoTbFS-",
+      "_index":"pw_data",
+      "_score":19.8656,
+      "_source":{
+         "Domain":"exploit.in",
+         "Email":"marin.vardic@zzf.hr",
+         "Password":"freeshit"
+      },
+      "_type":"_doc"
+   },
+   {
+      "_id":"_3PgVGsBBGJneKoTof0e",
+      "_index":"pw_data",
+      "_score":16.46111,
+      "_source":{
+         "Domain":"linkedin.com",
+         "Email":"jasna.cajsa-beber@zzf.hr",
+         "PassHash":"a3f5b3b7c790e397b2d77eca31cd96bcd57c8700"
+      },
+      "_type":"_doc"
+   },
+   {
+      "_id":"dBmbWmsBBGJneKoTZ5Wk",
+      "_index":"pw_data",
+      "_score":16.46111,
+      "_source":{
+         "Domain":"exploit.in",
+         "Email":"jasna.cajsa-beber@zzf.hr",
+         "Password":"vili2005"
+      },
+      "_type":"_doc"
+   }
+]
+</code>
+</pre>   
+    <br /><br />
+    Note you may use the fields below to guide you, but not all fields are returned with each query,
+    only available fields. If fields are added, they will be appended to the list of available fields for
+    query.
+
+  </p>
+
 <h2>Normalized Databases</h2>
 <p>The following are the databases available for search.</p>
 {% for db in dbs %}

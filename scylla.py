@@ -63,7 +63,7 @@ def grab():
     f = open("/var/www/html/results/" + request.args.get("wut"))
     return f.read()
 
-@app.route("/")
+#@app.route("/")
 #TODO: TURNED OFF AUTH
 #@requires_auth
 def index():
@@ -73,35 +73,7 @@ def index():
     if "wget" in user_agent or "curl" in user_agent or "aria" in user_agent:
         return "Using cli tools to download all databases is discouraged. You are encouraged to download in browser. If this is not possible I would simply ask that you open up a browser with scylla.sh (to allow cryptomining) while you do so. Note: this is a simple user-agent string check, to bypass this message simply falsify your user-agent header to a common browser." ,409
 
-    
-    all_dbs = [f for f in os.listdir("/var/www/scylla/static/dbs/") if os.path.isfile(os.path.join("/var/www/scylla/static/dbs/", f))]
-    
-    all_dbs_dics = []
-    for db in all_dbs:
-        _size = os.path.getsize("/var/www/scylla/static/dbs/" + db)
-        raw_size = os.path.getsize("/var/www/scylla/static/dbs/" + db)
-        name = db.split(".")[0]
-        filename = db
-        torrent_filename = "scylla.sh_" + filename + ".torrent"
-        _dic = {"size" : size(_size), "name" : name.title(), "filename" : filename, "raw_size" : raw_size, "torrent_filename" : torrent_filename}
-        all_dbs_dics.append(_dic)
-
-    all_scans = [f for f in os.listdir("/var/www/scylla/static/port-scans/") if os.path.isfile(os.path.join("/var/www/scylla/static/port-scans/", f))]
-
-    all_scans_dics = []
-    for scan in all_scans:
-        _size = os.path.getsize("/var/www/scylla/static/port-scans/" + scan)
-        name = scan.split(".")[0]
-        filename = scan
-        _dic = {"size" : size(_size), "name" : name.title(), "filename" : filename}
-        all_scans_dics.append(_dic)
-        
-    all_dbs_dics = sorted(all_dbs_dics, key=itemgetter('raw_size'), reverse = True) 
-    all_scans_dics = sorted(all_scans_dics, key=itemgetter('name'))
-
-    #print(all_scans_dics)
-    return render_template("index.html", all_dbs_dics = all_dbs_dics, all_scans_dics = all_scans_dics)
-
+@app.route("/")
 @app.route("/search")
 def search():
     size = 100
@@ -161,7 +133,7 @@ def search():
         fields = []
 
 #    print(_params)
-    return render_template("search.html", params = _params, hits_num = json_hits_num, fields = fields, pages = range(0, pages), es_url = r.url, size = size, dbs = dbs, html_results = html )
+    return render_template("index.html", params = _params, hits_num = json_hits_num, fields = fields, pages = range(0, pages), es_url = r.url, size = size, dbs = dbs, html_results = html )
     
 
 if __name__ == "__main__":
