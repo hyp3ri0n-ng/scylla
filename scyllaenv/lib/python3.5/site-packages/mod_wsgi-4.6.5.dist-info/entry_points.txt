@@ -1,3 +1,0 @@
-[console_scripts]
-mod_wsgi-express = mod_wsgi.server:main
-

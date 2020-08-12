@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:cc="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="662" height="456" viewBox="52 308 662 456"
+ inkscape:export-xdpi="4.8292031"
+ inkscape:export-ydpi="4.8292031"
+ inkscape:version="0.40"
+ sodipodi:docname="folder.svg"
+ sodipodi:version="0.32">
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:title>Blue Folder</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>hash</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>education</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>folder</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Seth Yastrov</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Seth Yastrov</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Seth Yastrov</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs3">
+    <linearGradient id="linearGradient1699">
+      <stop id="stop1700" offset="0.0000000" style="stop-color:#017eff;stop-opacity:1.0000000;"/>
+      <stop id="stop1701" offset="1.0000000" style="stop-color:#ecfaff;stop-opacity:1.0000000;"/>
+    </linearGradient>
+    <linearGradient gradientTransform="scale(1.319383,0.757930)" gradientUnits="userSpaceOnUse" id="linearGradient1702" inkscape:collect="always" x1="315.32162" x2="50.829018" xlink:href="#linearGradient1699" y1="908.78278" y2="460.75931"/>
+    <linearGradient gradientTransform="scale(1.399102,0.714744)" gradientUnits="userSpaceOnUse" id="linearGradient1704" inkscape:collect="always" x1="332.32208" x2="160.94328" xlink:href="#linearGradient1699" y1="965.31213" y2="716.09955"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer1" inkscape:cx="759.02120" inkscape:cy="2009.5904" inkscape:guide-bbox="true" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="828" inkscape:window-width="1041" inkscape:window-x="0" inkscape:window-y="5" inkscape:zoom="0.10853959" pagecolor="#ffffff" showguides="true"/>
+  <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
+    <path d="M 100.55625,363.89127 C 91.245216,366.10352 85.525517,375.38813 87.737775,384.69920 L 164.82498,724.71604 C 167.03723,734.02708 176.29146,739.75399 185.60250,737.54174 L 619.79663,634.37965 C 629.10766,632.16740 634.82736,622.88275 632.61511,613.57173 L 578.40026,349.77428 C 576.18801,340.46324 566.90337,335.46333 557.59234,336.95580 L 304.33017,374.62947 C 304.33017,374.62947 280.78957,332.97486 271.47851,335.18712 L 100.55625,363.89127 z " id="rect1061" sodipodi:nodetypes="ccccccccccc" style="color:#000000;fill:url(#linearGradient1702);fill-opacity:1.0;fill-rule:nonzero;stroke:#446c98;stroke-width:6.2500000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.0000000;stroke-dashoffset:1.2500000;stroke-opacity:1.0000000;marker:none;marker-start:none;marker-mid:none;marker-end:none;visibility:visible;display:block;"/>
+    <path d="M 657.00508,396.90839 L 230.32603,467.56690 C 221.01499,469.77915 213.07397,477.52023 212.07023,486.50635 L 165.32950,725.60934 C 167.29683,733.88955 176.37653,740.04698 185.68757,737.83473 L 619.86663,634.67622 C 629.17767,632.46397 632.21061,624.55681 634.11212,616.36659 L 677.36315,407.86138 C 677.94543,392.69780 665.59634,396.13571 657.00508,396.90839 z " id="rect1063" sodipodi:nodetypes="ccccccccc" style="opacity:0.82490272;color:#000000;fill:url(#linearGradient1704);fill-opacity:1.0;fill-rule:nonzero;stroke:#446c98;stroke-width:6.2500000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.0000000;stroke-dashoffset:1.2500000;stroke-opacity:1.0000000;marker:none;marker-start:none;marker-mid:none;marker-end:none;visibility:visible;display:block;"/>
+  </g>
+</svg>

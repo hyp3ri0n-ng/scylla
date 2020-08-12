@@ -1,0 +1,196 @@
+<html>
+
+  <title>Transparency Report</title>
+  
+  
+<style>
+body{
+padding:5px 5px 5px 5px;
+padding-bottom:10px;
+}
+
+.search-container{
+width: 490px;
+display: block;
+margin: 0 auto;
+}
+
+input#search-bar{
+margin: 0 auto;
+width: 100%;
+height: 45px;
+padding: 0 20px;
+font-size: 1rem;
+border: 1px solid #D0CFCE;
+outline: none;
+&:focus{
+border: 1px solid #008ABF;
+transition: 0.35s ease;
+color: #008ABF;
+&::-webkit-input-placeholder{
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+&::-moz-placeholder {
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+&:-ms-placeholder {
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+}
+}
+
+.search-icon{
+position: relative;
+float: right;
+width: 75px;
+height: 75px;
+top: -62px;
+right: -45px;
+}
+
+div#results {
+
+margin: auto;
+width: 60%;
+padding: 10px 10px 10px 10px;
+}
+
+body {
+margin: 5px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+overflow: hidden;
+background-color: #333;
+}
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.topnav a.active {
+background-color: #333;
+color: white;
+}
+
+div#page {
+
+width: 50%;
+text-align: center;
+margin: 0 auto;
+}
+
+table#results {
+
+width: 100%;
+font-size: 12px;
+padding: 10px 10px 10px 10px;
+font-weight: normal;
+}
+
+.upload-btn-wrapper {
+position: relative;
+overflow: hidden;
+display: inline-block;
+}
+
+.btn {
+border: 2px solid gray;
+color: gray;
+background-color: white;
+padding: 8px 20px;
+border-radius: 8px;
+font-size: 20px;
+font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+font-size: 100px;
+position: absolute;
+left: 0;
+top: 0;
+opacity: 0;
+}
+
+}
+
+</style>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/crowdsource">Help Me Help You</a>
+  <a href="/transparency">Transparency Report</a>
+</div>
+
+<br /><br />
+
+  <img src="{{ url_for('static', filename='transparency_aws_scylla.png') }}"></img>
+  <img src="{{ url_for('static', filename='buy_coffee.png') }}"></img>
+
+  <br />
+<h3>tl;dr</h3>
+  Funding:<br /><br />
+
+  Donations: ~$1010/mo.<br />
+  Projected cost: ~$19,000/mo. <br />
+
+  <h3>Scylla State</h3>
+  <p>Scylla is one of the largest aggregators of db dumps out there, certainly the largest free one that provides full wildcard and wildchar search over all fields.
+    Though the goal of a community project is not to make money, it'd be awesome to get monthly donations up a bit. Due to the massive influx of data
+  from the crowdsource program and DB donations, my costs have gone up about 3x what they were. As it is the project is ad and cryptominer free by popular
+  request. However, in order to make this viable long-term, I do need a bit of help from the community. I don't particularly care if I break even, bringing this cost
+  even a bit down would make it viable long-term. I have some stuff that I can do that will decrease the power of scylla slightly and I will keep everyone
+  posted. I just wanted to be transparent about costs vs how many donations I get, I currently have 15 total donors and 1 anonymous sponsor (you are awesome btw).
+  </p>
+  <p>
+I'm very clear that no one asked me to do this, and no one is going to be forced to pay for scylla.sh, it will always be free and open source (and the data open source
+as well). However, the response from the community in terms of usage has been overwhelming, with well over a million hits every month. Those of you that use it a lot: if 
+you have the means to donate or help in any way (check out the crowdsource page), I urge you to please do so. This transparency report will be updated monthly showing 
+costs vs. donations. You will never see donations exceed costs (i.e. I don't ever intend to make money off of this project). The goal is simply sustainability for the
+community. If donations don't go up, I'm going to put up mandatory video ads. Just kidding. I'm not Satan. Thanks everyone!
+ </p>
+
+ <p>
+  Since many have asked about direct donations, you can send Bitcoin to 3MpFsXKEpxSGzibCTxnceyZ6i3jSQDLzf3
+  or Monero to 4ADfkWQYwZ1Bix5W1tYrEX8hUC32z3ejeHa88Zc8GRfnhfhy2mgmqMLHdiAp9nXh4pDYnwquHvmddZ3nWhngyLzt3Q8jcxx and may also
+  donate with paypal with this button <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="TY7TX56VZARXG" />
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" a\
+lt="Donate with PayPal button" />
+    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+  </form>
+</p>
+
+  <style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-bu\
+tton{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#000000 !\
+important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 9px !important;font-size: 17px !important;letter-spacing:-0.08px !important;bo\
+x-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Lat\
+o', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all\
+ linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-bu\
+tton:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(19\
+0, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel\
+="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/Eiw47ImnT"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BM\
+C-btn-logo.svg" alt="Support Scylla"><span style="margin-left:5px">Support Scylla</span></a>
+
+    
+<a href="https://twitter.com/_hyp3ri0n" class="twitter-follow-button" data-show-count="false"><a href="https://twitter.com/_hyp3ri0n?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow _hyp3ri0n</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+      
+</body>
+
+
+</html>

@@ -101,13 +101,14 @@ font-weight: normal;
 
 </style>
 
-<a href="https://twitter.com/@_hyp3ri0n?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @_hyp3ri0n</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <div class="topnav">
   <a class="active" href="/">Home</a>
   <a href="/crowdsource">Help Me Help You</a>
 </div>
-  
+
+<a href="https://twitter.com/@_hyp3ri0n?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @_hyp3ri0n</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 <h2>0-day Hunting</h2>
 
@@ -119,6 +120,18 @@ Please note it is non-free (not trying to bait and switch you). If you use this 
 <p>
 Hey folks! Thanks for using scylla.sh and welcome! This is and always will be free. Direct donations to scylla.sh are on hold, If you want to help me out personally because you use or like this project, my father has a side project for an app-based automated drip irrigation system for growing plants in your house (hint: it works well for weeds of a certain nature in legal states). Instead of support to scylla check out and donate to his <a href="https://www.kickstarter.com/projects/1016921090/riego-automatically-water-your-houseplants" target=_blank>Kickstarter</a> if it looks interesting to you. Every tiny bit helps! Thanks everyone!
 </p>
+
+<h2>Why Scylla?</h2>
+<p>
+  scylla.sh has two major goals. One is to have a community-oriented database leak community and make a useful tool for security researchers
+</p>
+<p>
+  The other major goal is to undercut those people that are selling databases. If we can provide a free product here, we are eating into the bottom-line of those people
+  selling leaked dbs for thousands of dollars. This de-incentivises buying of those DBs and therefore posting them in the first place. Even places that are supposedly
+  "ethical" (looking at you HIBP) still have no problem selling your data. scylla.sh is and *will always* be free with an open API.
+</p>
+
+
 <!--<h2>Support Scylla</h2>
 
 <p>Scylla needs your help! To make this project sustainable it unfortunately needs some help from the commmunity. I am glad to put my personal time and
@@ -146,16 +159,8 @@ Hey folks! Thanks for using scylla.sh and welcome! This is and always will be fr
   </form>
 
 <div id="results">
-{{ html_results|safe }}
+** scylla search is down for maintanance!
 </div>
-
-<div id="page">
-
-  {% for page in pages %}
-
-    <a href="{{ url_for(request.endpoint) }}?&q={{ params['q'] }}&from={{ page * size }}&size=100">{{ page }}</a>
-
-  {% endfor %}
 
 </div>
 

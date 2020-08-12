@@ -1,0 +1,251 @@
+<html>
+
+  <title>Crowdsource</title>
+  
+  
+<style>
+body{
+padding:5px 5px 5px 5px;
+padding-bottom:10px;
+}
+
+.search-container{
+width: 490px;
+display: block;
+margin: 0 auto;
+}
+
+input#search-bar{
+margin: 0 auto;
+width: 100%;
+height: 45px;
+padding: 0 20px;
+font-size: 1rem;
+border: 1px solid #D0CFCE;
+outline: none;
+&:focus{
+border: 1px solid #008ABF;
+transition: 0.35s ease;
+color: #008ABF;
+&::-webkit-input-placeholder{
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+&::-moz-placeholder {
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+&:-ms-placeholder {
+transition: opacity 0.45s ease;
+opacity: 0;
+}
+}
+}
+
+.search-icon{
+position: relative;
+float: right;
+width: 75px;
+height: 75px;
+top: -62px;
+right: -45px;
+}
+
+div#results {
+
+margin: auto;
+width: 60%;
+padding: 10px 10px 10px 10px;
+}
+
+body {
+margin: 5px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+overflow: hidden;
+background-color: #333;
+}
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.topnav a.active {
+background-color: #333;
+color: white;
+}
+
+div#page {
+
+width: 50%;
+text-align: center;
+margin: 0 auto;
+}
+
+table#results {
+
+width: 100%;
+font-size: 12px;
+padding: 10px 10px 10px 10px;
+font-weight: normal;
+}
+
+.upload-btn-wrapper {
+position: relative;
+overflow: hidden;
+display: inline-block;
+}
+
+.btn {
+border: 2px solid gray;
+color: gray;
+background-color: white;
+padding: 8px 20px;
+border-radius: 8px;
+font-size: 20px;
+font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+font-size: 100px;
+position: absolute;
+left: 0;
+top: 0;
+opacity: 0;
+}
+
+}
+
+</style>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/crowdsource">Help Me Help You</a>
+  <a href="/transparency">Transparency Report</a>
+</div>
+
+<br /><br />
+
+<a href="https://twitter.com/_hyp3ri0n" class="twitter-follow-button" data-show-count="false"><a href="https://twitter.com/_hyp3ri0n?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow _hyp3ri0n</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+ 
+<h2>Scylla Crowdsourced Development</h2>
+  <p>
+  I need help in turning the data dumps I own of a variety of formats, to structured data! This sh** drives you nuts sometimes. Sometimes you'll get sql files you'll that you have to import then export, then reformat, sometimes you'll get an organized csv file, or sometimes a horribly formatted csv-like <strong>thing</strong> . This isn't very time consuming, but multiply by 100 and it sucks enough that you have to convince yourself that throwing money at the problem is "totally just the responsible thing to do for the project". Anyway, the deal I'm offering is 20 dollars for every database you normalize. Note I am not paying for the data (that is available free via the download link), I simply need help normalizing it. I would appreciate it if you did not download every file as my bandwidth costs will go through the roof. If you'd like the databases please just email me at acaceres@0-sec.net and I will provide you a link to all databases in the system.
+  
+  <pre>
+  email
+  ip
+  password
+  passsalt
+  username
+  passhash
+  domain
+  name <-- this is the "real name" of a person as they have entered it
+  </pre><br />
+
+The above are the valid JSON keys in a single-layer JSON object. The fields are fairly self explanatory, if a dump doesn't have a particular field please just leave it out of the object. Here is an example of what your file should look something like at the end: <br /><br />
+
+  <pre>
+    ubuntu@ip-172-31-37-193:~/bighd/normalized/05Aug_normed$ head -n 10 linkedin.jl
+    {"Email": "mnaaderi323211@gmail.com", "PassHash": "043bab64ffa7cba2dfeddc20a376ba1cab279225", "Domain": "linkedin.com"}
+    {"Email": "edgar323t2314@casarealtyinvestments.com", "PassHash": "a22d86b4ca2e489f67bf083e623a2558f1eb2a31", "Domain": "linkedin.com"}
+    {"Email": "i_workrrelated66432@yahoo.com", "Password": "xxx", "Domain": "linkedin.com"}
+    {"Email": "blkankgh5423@gmail.com", "PassHash": "0be150f6e0b05e5e8135130bbef021c46ce3d089", "Domain": "linkedin.com"}
+    {"Email": "scpo2rfirio1@hotmail.com", "PassHash": "b4b99d86e27d43e3740f7167a5c5b59cda044d73", "Domain": "linkedin.com"}
+    {"Email": "cha3rlesmfeldman2452@aol.com", "PassHash": "15acb58ea5737e06a1a40953575d0b6fbdbd78ba", "Domain": "linkedin.com"}
+    {"Email": "wzerdofgz32468264@gmail.com", "PassHash": "47d4d399df36393755181d1095b548461a3e3096", "Domain": "linkedin.com"}
+    {"Email": "awanweeshpande33343@yahoo.com", "PassHash": "0644bf09114451f6d11026728442ebbdcdb015f3", "Domain": "linkedin.com"}
+    {"Email": "dmosee@meaer.net", "PassHash": "835ed0ee9f8b21ed70e37febb008d2d6a5cac8a1", "Domain": "linkedin.com"}
+    {"Email": "aida.marcial@exitsouth.com2542221", "PassHash": "0e08bfa7a71090ed259506f01eb7d8158d6282ad", "Domain": "linkedin.com"}
+  </pre>
+  <br />
+  (those aren't real emails by the way)  
+
+  </p>
+
+<h3>How it works</h3>
+
+<p>
+  You can choose up to two databases at a time and "claim" them. In which case they will be marked as claimed (i.e. you will see the word claimed next to it). To claim a database just email acaceres@0-sec.net with the databases you want to help out with, please wait for me to respond before starting work as I am keeping track of conflicts and such. After I get back to you, I offer 20 dollars per database normalized, flat rate despite size or complexity and all that. It's kinda like playing Russian Roulette when unzipping the file - Some of them are in .sql format, some csv, and some are just very badly organized and formatted altogether. Sometimes you have to get fiddly with the string manipulation, and that part can suck a bit (it's not common), but I don't believe I've ever spent more than 10 minutes or so on a db. If you're feeling extra generous and just want to help out that's cool too, I'm glad to put your name up as a contributor on the front page.<br /><br />
+
+  **Important note**: This is not meant for data that I do not already own. I provide you the data, and you normalize for me is the deal. I am not and will never be paying for data. That said, if you have data you want to just give me, that's awesome.
+
+  **Other important note**: This is on hold for a little bit while I build out some automation. It became very difficult to manually track everyone's files and pay them.
+</p>
+  <p>
+ When finished please simply drop me a link to the file wherever you have chosen to upload it. *Very important*: please make the file extension a .jl extension (json lines),I won't download files if they are not in this format.
+ </p>
+
+<br /><br />
+
+
+{% for db in dbs %}
+    <pre><a href="/static/dbs/{{ db[0] }}">{{ db[0] }}</a>  {{ db[1] }}  {{ db[2] }}</pre>
+{% endfor %}
+
+</p>
+
+<h3>Payment Details</h3>
+
+Just send me the database and I can pay you through paypal, venmo, or any cryptocurrency (I prefer btc or xmr, but whatever is fine). You'll just have to trust me that this isn't some half-assed scheme to get free normalized databases. Anyway thanks for participating if you choose to do so!
+  
+  <!-- Matomo Image Tracker-->
+  <!--<img src="https://analytics.hyperiongray.com/matomo.php?idsite=9&amp;rec=1" style="border:0" alt="" /> -->
+  <!-- End Matomo -->
+
+  <h3>Other ways to help Scylla</h2>
+
+  <p>In general if you help me out I'm glad to put your twitter handle, name, resume, tax returns, insta model handle, Tinder profile link, or whatever you want as a contributor on the front page. Below are some ways you could help out!
+  </p>
+
+  <h3>Give us your Databases!</h3>
+  <p>Got a database we don't have? I'm sure we're missing even some of the larger dumps. With your help we can make the  scylla.sh community more powerful than ever - and free to boot! If you have a db we don't have please drop me an email at acaceres@0-sec.net, I will give you credentials to where I store stuff and you can upload it there. Every db helps! Please check relevant laws in your country to ensure that you are not breaking any by sharing this data. I *will not* pay for a database so please don't ask.</p>
+
+  <h3>Sponsor scylla.sh</h3>
+  <p>Do you hate money and love OSS? We offer sponsorship packages that will get your name front and center on this project if you would like. We are happy to take
+  anonymous sponsors, but 1k/mo. will get your logo on the front page as a contributor. ALL donations go to hosting costs. If donations ever exceed
+    the cost of scylla.sh (ha) I will return the money and keep people as sponsors, asking them to reduce their sponsorship amount.</p>
+
+
+  <h3>Follow me on Twitter</h3>
+
+  <p>
+  It may seem like a small gesture, but if you follow me on twitter you can both stay abreast of scylla news along with my various other OSS. It's a huge help
+  to be able to amplify my message here, so if you can't help with any of the above and happen to be a twitter user, every follow, RT, like, or whatever helps!
+  </p>
+
+    
+  <h3>Storage Space</h3>
+
+<p>  
+If you happen to have a large storage space device that's Internet accessible (cloud or otherwise) and I could use longish-term for this project, that's always helpful. I currently host about 8 TB of data, and that's only going to get bigger as more and more dumps are released. Please check relevant laws in your country first, I am passing around sensitive info that is fine in the US but may be questionable elsewhere.
+</p>
+
+  <img src="{{ url_for('static', filename='bob_hed.jpg') }}" height=309 width=550></img>
+  <p>"Gimme, gimme, gimme, I neeeed, I neeeed!"<br /><br />-What About Bob</p>
+
+
+    
+  
+<a href="https://twitter.com/_hyp3ri0n" class="twitter-follow-button" data-show-count="false"><a href="https://twitter.com/_hyp3ri0n?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow _hyp3ri0n</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      
+
+      
+<!--<h3<Sotrage Space</h3>
+  Got some extra storage pretty large (few ~5TBs) space you're not using? We could definitely use that. Got any other resource you're willing to donate to the project? Maybe a 128 GB server with a 5 TB HDD Dual CPU i8s you have just laying around? Hey, why not give it to me!  Large storage devices that you could make accessible to the internet for us are particularly helpful.
+-->
+</body>
+
+
+</html>
